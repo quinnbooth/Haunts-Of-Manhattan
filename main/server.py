@@ -17,6 +17,7 @@ def welcome():
 
 @app.route('/search/<prompt>')
 def search(prompt):
+   global haunts_data
    results = []
    for key in haunts_data.keys():
       haunt = haunts_data[key]
@@ -28,7 +29,17 @@ def search(prompt):
 
 # AJAX FUNCTIONS
 
-
+@app.route('/get_suggestions', methods=['GET', 'POST'])
+def get_suggestions():
+   global haunts_data
+   suggestions = request.get_json()
+   results = []
+   for key in haunts_data.keys():
+      haunt = haunts_data[key]
+      if haunt['id'] in suggestions:
+         results.append(haunt)
+   print(results)
+   return jsonify(result=results)
 
 
 if __name__ == '__main__':
