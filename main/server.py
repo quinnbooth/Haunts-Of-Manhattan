@@ -15,6 +15,16 @@ with open('./static/haunts.json', 'r', encoding='utf-8') as json_file:
 def welcome():
    return render_template('welcome.html')   
 
+@app.route('/search/<prompt>')
+def search(prompt):
+   results = []
+   for key in haunts_data.keys():
+      haunt = haunts_data[key]
+      if prompt.lower() in haunt['title'].lower():
+         results.append(haunt['title'])
+   results.sort()
+   return render_template('search.html', query=prompt, results_data=results)   
+
 
 # AJAX FUNCTIONS
 

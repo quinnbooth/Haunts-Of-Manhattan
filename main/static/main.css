@@ -41,7 +41,33 @@ body {
 
 .mainContainer {
     /* background-color: rgb(180, 179, 179); */
+    padding-top: 25px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 25px;;
     background-color: rgb(23, 23, 23);
     height: calc(100vh - 150px);
     box-shadow: 0px 20px 20px 20px #000;
+    overflow: hidden;
 }
+
+#searchResults {
+    font-weight: bold;
+    font-size: 24px;
+    color: rgb(159, 159, 159);
+}
+
+#results {
+    margin-top: 10px;
+}
+
+.result {
+    margin-top: 10px;
+    color:#8c8c8c;
+    letter-spacing: 2px;
+}
+
+.result:hover {
+    cursor: pointer;
+}
+

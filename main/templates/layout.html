@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="{{url_for('static', filename='main.css')}}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Creepster&display=swap">
 
+    <script src="../static/main.js"></script>
+
     <title>Haunts of Manhattan</title>
   </head>
   <body>
@@ -24,8 +26,8 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container">
         <a class="navbar-brand title" href="/">Haunts of Manhattan</a>
-        <form class="d-flex">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <form id="searchForm" class="d-flex">
+          <input id="searchBar" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
           <button class="btn btn-outline-success" type="submit">Search</button>
         </form>
       </div>
