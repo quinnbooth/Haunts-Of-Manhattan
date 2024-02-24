@@ -1,0 +1,47 @@
+body {
+    background-color: black;
+    background-image: url('https://i.pinimg.com/originals/b1/29/94/b1299445c4554f275b1d60595b329788.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    font-family: 'Roboto', sans-serif;
+    font-family: 'Gothic', sans-serif;
+}
+
+.navbar {
+    background-color: #0a0a0a !important;
+    box-shadow: 0px 0px 20px 0px #000;
+    z-index: 999;
+}
+
+.title {
+    font-family: 'Creepster', cursive;
+    color: rgb(255, 179, 0) !important;
+    font-weight: normal;
+    letter-spacing: 3px;
+    font-size: 40px;
+    text-shadow: -2px -2px 0 #000000, 2px -2px 1px #000, -2px 2px 1px #000, 2px 2px 1px #000, -6px -4px 1px #dbdbdb;
+}
+
+.form-control {
+    color: #fff;
+    border-radius: 2px;
+}
+
+.btn-outline-success {
+    color: rgb(255, 179, 0);
+    border-color: rgb(255, 179, 0);
+    border-radius: 2px;
+}
+
+.btn-outline-success:hover {
+    background-color: rgb(255, 179, 0);
+    color: #fff;
+}
+
+.mainContainer {
+    /* background-color: rgb(180, 179, 179); */
+    background-color: rgb(23, 23, 23);
+    height: calc(100vh - 150px);
+    box-shadow: 0px 20px 20px 20px #000;
+}
