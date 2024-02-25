@@ -123,12 +123,50 @@ body {
 .imgCol {
     display: flex;
     justify-content: center !important;
+    align-items: center !important;
 }
 
 #topRow {
-    margin-bottom: 50px !important;
+    margin-bottom: 30px !important;
+}
+
+#resultTitle {
+    letter-spacing: 1px;
+    color: white;
+    font-size: 24px;
+}
+
+#resultOpened {
+    letter-spacing: 1px;
+    color: #333333;
+    font-size: 16px;
+}
+
+#resultAddress {
+    letter-spacing: 1px;
+    color: #5e5e5e;
+}
+
+#resultNearby {
+    letter-spacing: 1px;
+    color: #5e5e5e;
+}
+
+#resultDescription {
+    font-size: 12px;
+    color: #5e5e5e;
+    letter-spacing: 0.8px;
 }
 
 .commentEntry {
     margin-bottom: 15px;
+    font-size: 14px;
+    color: #5e5e5e;
+}
+
+#comments {
+    color: #9b9b9b;
+    margin-bottom: 15px;
+    font-size: 20px;
+    letter-spacing: 1px;
 }
