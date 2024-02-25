@@ -22,9 +22,20 @@ def search(prompt):
    for key in haunts_data.keys():
       haunt = haunts_data[key]
       if prompt.lower() in haunt['title'].lower():
-         results.append(haunt['title'])
+         results.append((haunt['id'], haunt['title']))
    results.sort()
    return render_template('search.html', query=prompt, results_data=results)   
+
+@app.route('/view/<id>')
+def view(id):
+   global haunts_data
+   result = {}
+   for key in haunts_data.keys():
+      haunt = haunts_data[key]
+      if haunt['id'] == int(id):
+         result = haunt
+   return render_template('view.html', result_data=result) 
+
 
 
 # AJAX FUNCTIONS
@@ -38,7 +49,6 @@ def get_suggestions():
       haunt = haunts_data[key]
       if haunt['id'] in suggestions:
          results.append(haunt)
-   print(results)
    return jsonify(result=results)
 
 

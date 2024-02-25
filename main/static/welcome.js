@@ -1,5 +1,10 @@
 let suggested = []
 
+function selectSuggestion() {
+    const id = $(this).data('id');
+    window.location.assign(`/view/${id}`);
+}
+
 function getSuggestions(suggestions) {
     $.ajax({
         type: "POST",
@@ -26,12 +31,19 @@ function displaySuggestions() {
     suggested.forEach(function(suggestion) {
         const suggestionImg = $('<img class="suggestionImg">').attr('src', suggestion['image']);
         const suggestionTxt = $('<div>' + suggestion['title'] + '</div>');
-        imgRow.append($('<div class="col-4 suggested"></div>').append(suggestionImg));  
-        txtRow.append($('<div class="col-4 suggested"></div>').append(suggestionTxt));
+
+        let imgCol = $('<div class="col-4 suggested"></div>').append(suggestionImg);
+        imgCol.data('id', suggestion['id']);
+        imgCol.click(selectSuggestion);
+
+        let txtCol = $('<div class="col-4 suggested"></div>').append(suggestionTxt);
+        txtCol.data('id', suggestion['id']);
+        txtCol.click(selectSuggestion)
+
+        imgRow.append(imgCol);  
+        txtRow.append(txtCol);
     });
     $("#suggestions").append(imgRow).append(txtRow);
-
-
 }
 
 

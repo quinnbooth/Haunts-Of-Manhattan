@@ -84,6 +84,15 @@ body {
     padding: 0px;
 }
 
+.resultImg {
+    max-width: 100%;
+    max-height: 400px;
+    box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.5); 
+    border: 1px solid black;
+    margin: 0px;
+    padding: 0px;
+}
+
 .suggested {
     display: flex;
     align-items: center;
@@ -103,4 +112,23 @@ body {
     font-size: 24px;
     margin-top: 15px;
     letter-spacing: 2px;
+}
+
+.nearbyEntry {
+    display: inline-block;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+.imgCol {
+    display: flex;
+    justify-content: center !important;
+}
+
+#topRow {
+    margin-bottom: 50px !important;
+}
+
+.commentEntry {
+    margin-bottom: 15px;
 }

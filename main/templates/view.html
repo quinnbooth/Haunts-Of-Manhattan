@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<script>
+    let result = {{result_data|tojson}};
+    console.log(result);
+</script>
+
+<script type="text/javascript" src="{{ url_for('static', filename = 'view.js') }}"></script>
+
+<div class="container" id="container"></div>
+
+{% endblock %}
+
+
+
