@@ -44,7 +44,7 @@ body {
     padding-top: 25px;
     padding-left: 50px;
     padding-right: 50px;
-    padding-bottom: 25px;;
+    padding-bottom: 25px;
     background-color: rgb(23, 23, 23);
     height: calc(100vh - 150px);
     box-shadow: 0px 20px 20px 20px #000;
@@ -62,10 +62,10 @@ body {
 }
 
 .result {
-    margin-top: 10px;
+    align-items: start;
     color:#8c8c8c;
     letter-spacing: 2px;
-    margin: 0px;
+    margin: 10px;
     padding: 0px;
 }
 
@@ -75,9 +75,10 @@ body {
 
 .suggestionImg {
     max-width: 90%;
-    max-height: 60%;
+    /* max-height: 60%; */
     width: auto;
-    height: 300px;
+    /* height: 300px; */
+    height: 250px;
     box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.5); 
     border: 1px solid black;
     margin: 0px;
@@ -169,4 +170,52 @@ body {
     margin-bottom: 15px;
     font-size: 20px;
     letter-spacing: 1px;
+}
+
+.suggestionYear {
+    color: #414141;
+    text-align: center;
+}
+
+.suggestionDiv {
+    text-align: center;
+}
+
+.suggestionComment {
+    text-align: center;
+    padding: 20px;
+    color: #787878;
+    font-size: 13px;
+    letter-spacing: 0.8px;
+}
+
+.welcomeDiv {
+    padding-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color :#020202;
+    font-family: 'Creepster', cursive;
+    color: rgb(255, 179, 0) !important;
+    font-weight: normal;
+    letter-spacing: 3px;
+    font-size: 40px;
+    text-shadow: -2px -2px 0 #000000, 2px -2px 1px #000, -2px 2px 1px #000, 2px 2px 1px #000, -6px -4px 1px #dbdbdb;
+}
+
+.welcomeDescription {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color :#020202;
+    padding-bottom: 30px;
+    color: #9b9b9b;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+#openImg {
+    height: 200px;
+    width: auto;
+    padding: 15px;
 }

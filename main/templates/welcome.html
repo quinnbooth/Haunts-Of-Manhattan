@@ -4,8 +4,25 @@
 
 <script type="text/javascript" src="{{ url_for('static', filename = 'welcome.js') }}"></script>
 
+<div class="container welcomeContainer">
+    <div class="row">
+        <div class="welcomeDiv">
+            Haunts of
+            <img id="openImg" src="https://clipart-library.com/img/821016.png" alt="Clipart of haunted house.">
+            Manhattan
+        </div>
+    </div>
+    <div class="row">
+        <div class="welcomeDescription">
+            Your Ultimate Guide to Manhattan's Haunted Hotspots!<br> 
+            Plan your next Halloween with college friends and<br>
+            keep an eye out for recent sightings!
+        </div>
+    </div>
+</div>
+
 <div id="suggestions" class="container">
-    <div class="row recommended">Recommended</div>
+    <div class="row recommended"><i>Recent paranormal sightings at...</i></div><br>
 </div>
 
 {% endblock %}
