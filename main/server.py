@@ -72,6 +72,18 @@ def get_suggestions():
          results.append(haunt)
    return jsonify(result=results)
 
+@app.route('/add_submit', methods=['GET', 'POST'])
+def add_submit():
+   global haunts_data
+   new_entry = request.get_json()
+   print(new_entry)
+   results = []
+   # for key in haunts_data.keys():
+   #    haunt = haunts_data[key]
+   #    if haunt['id'] in suggestions:
+   #       results.append(haunt)
+   return jsonify(result=results)
+
 
 if __name__ == '__main__':
    app.run(debug = True)
