@@ -12,4 +12,10 @@ $(document).ready(function() {
 
   });
 
+  $('#addBtn').click(function(event) {
+    console.log('test');
+    event.preventDefault();
+    window.location.href = "/add";
+  });
+
 });

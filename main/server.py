@@ -53,6 +53,10 @@ def view(id):
          result = haunt
    return render_template('view.html', result_data=result) 
 
+@app.route('/add')
+def add():
+   return render_template('add.html')
+
 
 
 # AJAX FUNCTIONS
