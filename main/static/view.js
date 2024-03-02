@@ -1,4 +1,4 @@
-let img = $('<img class="resultImg">').attr('src', result['image']);
+let img = $('<img class="resultImg">').attr('src', result['image']).attr('alt', 'Picture of ' + result['title']);
 let title = $(`<span id="resultTitle">${result['title']}</span><br>`);
 let opened = (`<span id="resultOpened"> est. ${result['opened']}</span>`);
 let address = $(`<span id="resultAddress">${result['address']}</span><br>`);

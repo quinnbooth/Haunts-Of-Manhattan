@@ -3,6 +3,7 @@ from flask import render_template
 from flask import Response, request, jsonify
 app = Flask(__name__)
 import json
+import re
 
 current_id = 11
 with open('./static/haunts.json', 'r', encoding='utf-8') as json_file:
@@ -21,8 +22,24 @@ def search(prompt):
    results = []
    for key in haunts_data.keys():
       haunt = haunts_data[key]
-      if prompt.lower() in haunt['title'].lower():
-         results.append((haunt['id'], haunt['title']))
+      p = prompt.lower()
+      if p in haunt['title'].lower():
+         # results.append((haunt['id'], haunt['title']))
+         highlighted_title = re.sub(p, lambda match: f'<span class="highlighted">{match.group()}</span>', haunt['title'], flags=re.IGNORECASE)
+         results.append((haunt['id'], highlighted_title))
+      elif p in haunt['address'].lower():
+         # results.append((haunt['id'], haunt['address']))
+         highlighted_address = re.sub(p, lambda match: f'<span class="highlighted">{match.group()}</span>', haunt['address'], flags=re.IGNORECASE)
+         results.append((haunt['id'], highlighted_address))
+      else:
+         count = 0
+         for c in haunt['comments']:
+            if p in c:
+               # results.append((haunt['id'], "..." + haunt['comments'][count] + "..."))
+               highlighted_comment = re.sub(p, lambda match: f'<span class="highlighted">{match.group()}</span>', haunt['comments'][count], flags=re.IGNORECASE)
+               results.append((haunt['id'], highlighted_comment))
+               break
+            count += 1
    results.sort()
    return render_template('search.html', query=prompt, results_data=results)   
 

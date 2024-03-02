@@ -31,7 +31,7 @@ function displaySuggestions() {
     let commentRow = $('<div class="row result">');
 
     suggested.forEach(function(suggestion) {
-        const suggestionImg = $('<img class="suggestionImg">').attr('src', suggestion['image']);
+        const suggestionImg = $('<img class="suggestionImg">').attr('src', suggestion['image']).attr('alt', 'Picture of ' + suggestion['title']);
         const suggestionTxt = $('<div class="suggestionDiv">' + suggestion['title'] + '<br><span class="suggestionYear">est. ' + suggestion['opened'] + '</span></div>');
         const suggestionTopComment = $('<div class="suggestionComment">Top Comment:<br><br>' + suggestion['comments'][0] + '</div>');
 

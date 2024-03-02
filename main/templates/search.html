@@ -9,7 +9,7 @@
 <script type="text/javascript" src="{{ url_for('static', filename = 'search.js') }}"></script>
 
 <div class="container">
-    <div id="searchResults" class="row">Search Results for "{{query}}"</div>
+    <div id="searchResults" class="row">{{results_data|length}} Search Results for "{{query}}"</div>
     <div id="resultsBox" class="container">
     </div>
 </div>

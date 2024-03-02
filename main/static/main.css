@@ -219,3 +219,8 @@ body {
     width: auto;
     padding: 15px;
 }
+
+.highlighted {
+    background-color: yellow;
+    color: black;
+}
