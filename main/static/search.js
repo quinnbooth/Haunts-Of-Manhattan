@@ -1,5 +1,6 @@
 function selectResult() {
     const id = $(this).data('id');
+    console.log(id);
     window.location.assign(`/view/${id}`);
 }
 

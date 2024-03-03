@@ -17,7 +17,10 @@ function addSubmit(fields) {
         contentType: "application/json; charset=utf-8",
         data : JSON.stringify(fields),
         success: function(result){
-            console.log('success');
+            console.log(result);
+            let new_id = result['result']['id'];
+            let popup = $(`<div id="newItem"><span class="highlighttext">New item created. View it <a href="/view/${new_id}">here</a>.</span></div><br>`);
+            $("#formContainer").prepend(popup);
         },
         error: function(request, status, error){
             console.log("Error");
@@ -38,9 +41,9 @@ $(document).ready(function() {
                 formData[$(this).attr('name')] = $(this).val();
             }
         });
-        console.log(formData);
         $('.custom-form :input').val('');
         addSubmit(formData);
+        $('#title').focus();
     });
 
 });

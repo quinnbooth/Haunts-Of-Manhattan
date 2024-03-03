@@ -119,12 +119,13 @@ body {
     display: inline-block;
     margin-right: 10px;
     margin-left: 10px;
+    color: rgb(146, 146, 146);
 }
 
 .imgCol {
-    display: flex;
+    /* display: flex;
     justify-content: center !important;
-    align-items: center !important;
+    align-items: center !important; */
 }
 
 #topRow {
@@ -161,11 +162,29 @@ body {
 
 .commentEntry {
     margin-bottom: 15px;
-    font-size: 14px;
+    font-size: 12px;
     color: #5e5e5e;
 }
 
 #comments {
+    color: #9b9b9b;
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-top: 50px;
+}
+
+.topComment {
+    margin-bottom: 25px;
+    font-size: 14px;
+    color: #5e5e5e;
+    font-style: italic;
+}
+
+#headerRow {
+    margin-bottom: 20px;
+}
+
+.dspan {
     color: #9b9b9b;
     margin-bottom: 15px;
     font-size: 20px;
@@ -270,4 +289,23 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
+
+#newItem {
+    padding: 25px;
+    text-align: center;
+    z-index: 999;
+}
+
+#newItem::selection {
+    background-color: white;
+    color: black; /* Adjust the text color as needed */
+}
+
+.highlighttext {
+    background-color: white;
+    padding: 10px;
+}
+
+
