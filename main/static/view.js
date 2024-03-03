@@ -22,7 +22,9 @@ $(document).ready(function() {
 
     title.append(opened);
     infoCol.append(description);
-    imgCol.append(img);
+
+    let editLink = $(`<a href="/edit/${result['id']}" class="editLink">Edit</a>`)
+    imgCol.append(img).append(editLink);
     infoRow.append(infoCol).append(imgCol);
 
     $("#container").append(infoRow);

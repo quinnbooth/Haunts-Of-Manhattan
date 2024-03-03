@@ -123,9 +123,16 @@ body {
 }
 
 .imgCol {
-    /* display: flex;
-    justify-content: center !important;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center !important;
     align-items: center !important; */
+    text-align: right;
+    font-size: 10px;
+}
+
+.editLink {
+    color: rgb(159, 159, 159);
 }
 
 #topRow {

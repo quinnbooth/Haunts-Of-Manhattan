@@ -55,6 +55,16 @@ def view(id):
 def add():
    return render_template('add.html')
 
+@app.route('/edit/<id>')
+def edit(id):
+   global haunts_data
+   result = {}
+   for key in haunts_data.keys():
+      haunt = haunts_data[key]
+      if haunt['id'] == int(id):
+         result = haunt
+   return render_template('edit.html', result_data=result) 
+
 
 
 # AJAX FUNCTIONS
@@ -81,6 +91,21 @@ def add_submit():
    new_entry['opened'] = int(new_entry['opened'])
    haunts_data[str(uuid.uuid4())] = new_entry
    current_id += 1
+   return jsonify(result=new_entry)
+
+@app.route('/edit/edit_submit', methods=['GET', 'POST'])
+def edit_submit():
+   global haunts_data
+   global current_id
+   new_entry = request.get_json()
+   new_entry['comments'] = new_entry['comments'].split(', ')
+   new_entry['nearby'] = new_entry['nearby'].split(', ')
+   new_entry['opened'] = int(new_entry['opened'])
+   new_entry['id'] = int(new_entry['id'])
+   for key in haunts_data.keys():
+      haunt = haunts_data[key]
+      if haunt['id'] == int(new_entry['id']):
+         haunts_data[key] = new_entry
    return jsonify(result=new_entry)
 
 
