@@ -29,7 +29,10 @@ def search(prompt):
          results.append((haunt['id'], highlighted_title))
       elif p in haunt['address'].lower():
          highlighted_address = re.sub(p, lambda match: f'<span class="highlighted">{match.group()}</span>', haunt['address'], flags=re.IGNORECASE)
-         results.append((haunt['id'], highlighted_address))
+         results.append((haunt['id'], "(" + highlighted_address + ") " + haunt['title']))
+      elif p in str(haunt['opened']).lower():
+         highlighted_year = re.sub(p, lambda match: f'<span class="highlighted">{match.group()}</span>', str(haunt['opened']), flags=re.IGNORECASE)
+         results.append((haunt['id'], "(est. " + highlighted_year + ") " + haunt['title']))
       else:
          count = 0
          for c in haunt['comments']:

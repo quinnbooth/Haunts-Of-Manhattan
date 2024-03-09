@@ -1,6 +1,6 @@
 let title = $(`<span id="resultTitle">${result['title']}</span><br>`);
-let opened = (`<span id="resultOpened"> est. ${result['opened']}</span>`);
-let address = $(`<span id="resultAddress">${result['address']}</span><br>`);
+let opened = (`<span id="resultOpened"> est. <a id="resultOpened" href="/search/${result['opened']}">${result['opened']}</a></span>`);
+let address = $(`<span id="resultAddress">${result['address'].split(' ').slice(0, -1).join(' ')} <a id="resultAddress" href="/search/${result['address'].split(' ').pop()}">${result['address'].split(' ').pop()}</a></span><br>`);
 let nearby = $(`<div id="resultNearby">Near: </div><br>`);
 let description = $(`<span id="resultDescription"><span class="dspan">Description</span><br>${result['description']}</span>`);
 let infoCol = $(`<div class="col-8">`);

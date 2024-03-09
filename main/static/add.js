@@ -53,7 +53,7 @@ $(document).ready(function() {
                 } else if (field == "opened_year") {
                     let intYear = parseInt(input, 10);
                     let fltYear = parseFloat(input);
-                    if (isNaN(intYear) || intYear != fltYear || intYear > 2024 || intYear < 1000) {
+                    if (isNaN(intYear) || /\D/.test(input) || intYear != fltYear || intYear > 2024 || intYear < 1000) {
                         label.append(error_year);
                         success = false;
                     }
